@@ -72,74 +72,44 @@ if __name__ == "__main__":
             print(results)
             engine.setProperty('rate', 150)
             speak(results)
-            engine.setProperty('rate', 200)
-             
+            engine.setProperty('rate', 200)            
         elif 'website' in query:
             speak("Here you go!")
             webbrowser.open("https://jovaneah.github.io/")
-
         elif 'search in google' in query:
             speak("What do you want me to search?")
             searching = takeCommand()
             speak("Searching "+searching)
             webbrowser.open('https://www.google.com/search?client=firefox-b-d&q='+searching)
-
         elif 'search in youtube' in query:
             speak("What do you want me to search?")
             youtube = takeCommand()
             speak("Okay! here you go!")
             webbrowser.open('https://www.youtube.com/results?search_query='+youtube)
-        
-        elif 'research' in query:
-            speak("What do you want to research?")
-            study = input("Tell me : ")
-            speak("research"+study)
-            webbrowser.open('https://wol.jw.org/en/wol/s/r1/lp-e?q='+study+'&p=par&r=occ&st=a')
-
         elif 'play music' in query:
             from Musicdir import playmusic
             playmusic(query)
-        
         elif 'play song' in query:
             from Musicdir import tired
             tired(query)
-
-        elif 'play' in query:
-            speak("What do you want to play?")
-            play = takeCommand()
-            speak("playing "+play)
-            pywhatkit.playonyt(play)
-        elif 'stop music' in query:
-            pass
-
         elif 'the time' in query:
             word = ['The time is ', 'it\'s ']
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             engine.setProperty('rate', 150)
             speak(random.choice(word)+strTime)
-        
         elif 'thank you' in query:
             thank = ['Your welcome', 'No problem', 'My pleasure']
             speak(random.choice(thank))
-        
         elif 'open' in query:
             from Dictapp import openappweb
             openappweb(query)
-
         elif "close" in query:
             from Dictapp import closeappweb
             closeappweb(query)
-
         elif 'sorry' in query:
             speak("It's okay")
-            
-        elif 'my favorite song' in query:
-            speak("Enjoy it!")
-            webbrowser.open('https://www.jw.org/en/library/music-songs/sing-out-joyfully/20-you-gave-your-precious-son/?media=sjjc')
-
         elif 'happy' in query:
             speak("I'm glad to hear that!")
-            
         elif 'hello' in query:
             speak("Hello!")
         elif 'how are you' in query:
@@ -158,34 +128,11 @@ if __name__ == "__main__":
             speak("I'm learning your code!")
         elif 'yo' in query:
             speak("Yo")
-
-        elif 'good' in query:
-            speak('thanks')
-
-        elif 'right' in query:
-            speak("Yes")
-
-        elif 'not' in query:
-            speak("Sorry")
-
-        elif 'joke' in query:
-            print(pyjokes.get_joke())
-            speak(pyjokes.get_joke())
-        
         elif 'test' in query:
             speak("Hello, hello. I can hear you!")
-
-        elif "calculate" in query:
-            from Calculatenumbers import WolfRamAlpha
-            from Calculatenumbers import Calc
-            query = query.replace("calculate","")
-            query = query.replace("jarvis","")
-            Calc(query)
-
         elif "whatsapp" in query:
             from Whatsapp import sendMessage
             sendMessage()
-            
         elif "go to sleep" in query:
             speak("Going to sleep")
             exit()
