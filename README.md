@@ -2,7 +2,9 @@
 
 #### Python Library
 pyttsx3
+
 SpeechRecognition
+
 pyaudio
 
 
