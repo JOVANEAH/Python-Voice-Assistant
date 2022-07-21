@@ -1,3 +1,5 @@
+# run this file
+
 from click import command
 import pyaudio
 from base64 import encode
@@ -89,9 +91,6 @@ if __name__ == "__main__":
         elif 'play music' in query:
             from Musicdir import playmusic
             playmusic(query)
-        elif 'play song' in query:
-            from Musicdir import tired
-            tired(query)
         elif 'the time' in query:
             word = ['The time is ', 'it\'s ']
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
@@ -112,20 +111,8 @@ if __name__ == "__main__":
             speak("I'm glad to hear that!")
         elif 'hello' in query:
             speak("Hello!")
-        elif 'how are you' in query:
-            speak("Fine as usual!")
-            speak("And you?")
-            inpt = takeCommand()
-            if 'fine' in inpt:
-                speak("Nice!")
-            elif 'tired' in inpt:
-                from Musicdir import playmusic
-                playmusic(query)
-            elif 'bad' in inpt:
-                from Musicdir import tired
-                tired(query)
         elif 'what are you doing' in query:
-            speak("I'm learning your code!")
+            speak("I'm making a coffee!")
         elif 'yo' in query:
             speak("Yo")
         elif 'test' in query:
