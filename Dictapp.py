@@ -12,7 +12,7 @@ engine.setProperty("rate",200)
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
-dictapp = {"command prompt":"cmd","paint":"mspaint","word":"winword","excel":"excel","chrome":"chrome","vscode":"code","powerpoint":"powerpnt","whatsapp":"C:\\Users\\Jovan\\AppData\\Local\\WhatsApp\\whatsapp.exe","notepad":"C:\\WINDOWS\\system32\\notepad.exe", "spotify":"spotify", "photoshop":"photoshop", "lightroom":"lightroom.exe", "premiere":"premiere", "discord":"discord"}
+dictapp = {"command prompt":"cmd","paint":"mspaint","word":"winword","excel":"excel","chrome":"chrome","vscode":"code","powerpoint":"powerpnt"}
 
 def openappweb(query):
     speak("Launching bro")
